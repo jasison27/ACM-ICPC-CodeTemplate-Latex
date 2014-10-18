@@ -1,3 +1,4 @@
 Code Template for ACM-ICPC
-SYSU_TEAM_6
+@SYSU_DemensionalSniper
+jasion
 

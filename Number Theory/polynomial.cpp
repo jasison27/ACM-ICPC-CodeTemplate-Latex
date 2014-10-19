@@ -1,56 +1,79 @@
-struct Poly {
-  double coef[MAXN];
-  int n;
-  Poly(int _n  = 0) : n(_n) {
-    for(int i = 0; i < MAXN; ++ i) coef[i] = 0;
-  }
-  Poly operator + (const Poly &a) {
-    Poly ret(max(n, a.n));
-    for (int i = ret.n; i >= 0; i--) {
-      ret.coef[i] = coef[i] + a.coef[i];
+const int MAXN = 500;
+const double EPS = 1e-10;
+inline int sgn(const double &a) { return a > EPS ? 1 : (a < -EPS ? -1 : 0); }
+struct Polynomial {
+    double data[MAXN];
+    int n;
+    Polynomial() {}
+    Polynomial(int _n) : n(_n) {
+        memset(data, 0, sizeof(data));
     }
-    while (sgn(ret.coef[ret.n]) == 0 && ret.n) ret.n--;
-    return ret;
-  }
-  Poly operator - (const Poly &a) {
-    Poly ret(max(n, a.n));
-    for (int i = ret.n; i >= 0; i--) {
-      ret.coef[i] = coef[i] - a.coef[i];
+    Polynomial(double *_data, int _n) {
+        memset(data, 0, sizeof(data));
+        n = _n;
+        for (int i = n; i >= 0; i--) data[i] = _data[i];
     }
-    while (sgn(ret.coef[ret.n]) == 0 && ret.n) ret.n--;
-    return ret;
-  }
-  Poly operator * (const Poly &a) {
-    Poly ret(n + a.n);
-    for (int i = n; i >= 0; i--) {
-      for (int j = a.n; j >= 0; j--) {
-        ret.coef[i + j] += coef[i] * a.coef[j];
-      }
+    Polynomial operator + (const Polynomial &a) {
+        Polynomial c(max(n, a.n));
+        for (int i = c.n; i >= 0; i--) c.data[i] = data[i] + a.data[i];
+        while (sgn(c.data[c.n]) == 0 && c.n) c.n--;
+        return c;
     }
-    return ret;
-  }
-  Poly operator / (const Poly &a) {
-    if (n < a.n) return *this;
-    Poly ret(n - a.n);
-    for (int i = ret.n; i >= 0; i--) {
-      ret.coef[i] = coef[i + a.n];
+    Polynomial operator - (const Polynomial &a) {
+        Polynomial c(max(n, a.n));
+        for (int i = c.n; i >= 0; i--) c.data[i] = data[i] - a.data[i];
+        while (sgn(c.data[c.n]) == 0 && c.n) c.n--;
+        return c;
     }
-    for (int i = ret.n; i >= 0; i--) {
-      ret.coef[i] /= a.coef[a.n];
-      for (int j = i - 1; a.n - i + j >= 0 && j >= 0; j--) {
-        ret.coef[j] -= ret.coef[i] * a.coef[a.n - i + j];
-      }
+    Polynomial operator * (const Polynomial &a) {
+        Polynomial c(n + a.n);
+        for (int i = n; i >= 0; i--) for (int j = a.n; j >= 0; j--) c.data[i + j] += data[i] * a.data[j];
+        return c;
     }
-    return ret;
-  }
-  Poly operator % (const Poly &a) {
-    Poly ret = *this - *this / a * a;
-    while (sgn(ret.coef[ret.n]) == 0 && ret.n) ret.n--;
-    return ret;
-  }
+    Polynomial operator / (const Polynomial &a) {
+        if (n < a.n) return *this;
+        else {
+            Polynomial c(n - a.n);
+            for (int i = c.n; i >= 0; i--) c.data[i] = data[i + a.n];
+            for (int i = c.n; i >= 0; i--) {
+                c.data[i] /= a.data[a.n];
+                for (int j = i - 1; a.n - i + j >= 0 && j >= 0; j--) c.data[j] -= c.data[i] * a.data[a.n - i + j];
+            }
+            return c;
+        }
+    }
+    Polynomial operator % (const Polynomial &a) {
+        Polynomial c = *this - *this / a * a;
+        while (sgn(c.data[c.n]) == 0 && c.n) c.n--;
+        return c;
+    }
+    bool iszero() {
+        return n == 0 && sgn(data[0]) == 0;
+    }
+    bool isconst() {
+        return n > 0;
+    }
+    Polynomial derivative() {
+        Polynomial a(n - 1);
+        for (int i = n - 1; i >= 0; i--) a.data[i] = data[i + 1] * (double)(i + 1);
+        return a;
+    }
+    Polynomial integral() {
+        Polynomial a(n + 1);
+        for (int i = n + 1; i >= 1; i--) a.data[i] = data[i - 1] / (double)i;
+        return a;
+    }
+    void show() {
+        for (int i = n; i >= 0; i--) {
+            printf("%.6f", data[i], i);
+            if (i != 0) printf(" x");
+            if (i != 1 && i != 0) printf(" ^ %d", i);
+            if (i != 0) printf(" + ");
+            else printf("\n");
+        }
+    }
 };
-Poly gcd(Poly a , Poly b) {
-  if (b.n == 0 && sgn(b.coef[0]) == 0) return a;
-  else return gcd(b, a % b);
+Polynomial gcd(Polynomial a , Polynomial b) {
+    if (b.iszero()) return a;
+    else return gcd(b, a % b);
 }
-

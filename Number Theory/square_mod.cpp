@@ -1,4 +1,5 @@
-// be careful when n = 2
+// x*x = a (mod n), be careful there is a single sol. when n = 2
+// otherwise, x and n-x are both okay
 LL modsqr(LL a, LL n) {
   LL b, k, i, x;
   if (n == 2) return a % n;

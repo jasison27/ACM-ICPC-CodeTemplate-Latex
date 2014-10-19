@@ -1,3 +1,4 @@
+// eg: hdu 2815
 // d*a^(x-c) = b (mod n), make sure that (a,n) = 1 and (d,n) = 1
 map<LL,LL>f;
 LL log_mod(LL a, LL b, LL n, LL c, LL d) {
@@ -21,7 +22,7 @@ LL log_mod(LL a, LL b, LL n, LL c, LL d) {
   }
   return -1;
 }
-// a^x = b (mod n)
+// a^x = b (mod n), no restriction
 LL log_mod(LL a, LL b, LL n) {
   b%=n;
   LL c = 0, d = 1, t;

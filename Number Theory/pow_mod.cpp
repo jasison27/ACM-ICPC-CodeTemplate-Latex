@@ -1,3 +1,4 @@
+// a^x % n
 LL pow_mod(LL a, LL x, LL n) {
   LL ret = 1, mul = a;
   while (x) {

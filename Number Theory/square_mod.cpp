@@ -1,5 +1,7 @@
-// x*x = a (mod n), be careful there is a single sol. when n = 2
+// x*x = a (mod n), make sure that n is prime
+// be careful there is a single sol. when n = 2
 // otherwise, x and n-x are both okay
+// eg: ural 1132
 LL modsqr(LL a, LL n) {
   LL b, k, i, x;
   if (n == 2) return a % n;

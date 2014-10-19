@@ -1,3 +1,4 @@
+// prime test
 bool Witness(LL n, LL a) {
   LL m = n-1, j = 0;
   while(!(m&1)) m >>= 1, j ++;

@@ -1,3 +1,4 @@
+// eg: SGU 511
 struct PR {
   // make sure that p is prime
   // if p = 2, solve the prob. without PR

@@ -1,4 +1,4 @@
-LL inv1(LL a, LL n) {
+LL inv1(LL a, LL n) { // a^-1 under n
   LL d, x, y;
   gcd(a,n,d,x,y);
   return d == 1 ? (x+n)%n : -1;

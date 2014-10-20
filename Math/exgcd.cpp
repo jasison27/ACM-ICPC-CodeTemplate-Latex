@@ -1,4 +1,4 @@
-// a * x + b * y = 1
+// a * x + b * y = d
 LL exgcd(LL a, LL b, LL &x, LL &y){
   if (!a){
     x = 0;

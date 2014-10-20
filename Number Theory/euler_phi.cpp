@@ -1,6 +1,3 @@
-#include <cstdio>
-#include <cstring>
-#include <cmath>
 // #x that x<=n && gcd(x,n)==1
 int euler_phi(int n) {
   int m = (int)sqrt(n+0.5);
@@ -12,7 +9,6 @@ int euler_phi(int n) {
   if (n > 1) ans = ans / n * (n-1);
   return ans;
 }
-const int maxn = 10000;
 int phi[maxn];
 void phi_table(int n) {
   for (int i = 2; i <= n; ++ i) phi[i] = 0;
@@ -26,6 +22,4 @@ void phi_table(int n) {
     }
     phi[i] += phi[i-1];
   }
-}
-int main() {
 }

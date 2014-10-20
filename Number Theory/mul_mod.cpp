@@ -1,3 +1,4 @@
+// x*y % n
 LL mul_mod(LL x, LL y, LL n) {
   LL T = floor(sqrt(n) + 0.5);
   LL t = T * T - n;

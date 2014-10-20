@@ -1,7 +1,4 @@
 // eg: poj 3471
-#include <cstdio>
-#include <cmath>
-#include <cstring>
 const int maxn = 10000000;
 const int maxp = 700000; // about maxn/log(maxn)
 struct Factor{ // factor as p^num
@@ -60,6 +57,4 @@ struct DeComposer {
     decompose2(1,0);
   }
 } dc_solver;
-int main() {
-}
 

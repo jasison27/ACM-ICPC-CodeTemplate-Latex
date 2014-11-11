@@ -1,7 +1,6 @@
 const int inf = 0x3f3f3f3f;
 const int N = 205;
 const int M = 1205;
-inline int min(int x,int y) { return x<y?x:y; }
 struct Edge{
 	int v,f,nxt;
 };

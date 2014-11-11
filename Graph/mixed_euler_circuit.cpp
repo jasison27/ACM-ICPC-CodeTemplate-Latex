@@ -1,3 +1,4 @@
+// eg: soj 1066
 const int N = 205;
 int degree[N],n;
 void init(){

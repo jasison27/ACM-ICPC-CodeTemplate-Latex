@@ -43,7 +43,7 @@ struct Dicnic{
 		return 0;
 	}
 	int dfs(int u,int delta){
-		if(u==sink)return delta;
+		if(u==sink || delta==0)return delta;
 		int ret=0;
 		for(int i=g[u];i!=-1;i=e[i].nxt){
 			int v=e[i].v, f=e[i].f;

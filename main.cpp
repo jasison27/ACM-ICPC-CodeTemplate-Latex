@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstring>
-const int MAXL = 50;
+const int MAXL = 100;
 const char* cf = "/config";
 const char* tf = "template.tex";
 const char* head = "head";
@@ -54,7 +54,7 @@ int main() {
 		while(fgets(temp, MAXL, fp) != NULL) {
 		  if (temp[0] != '<') break;
 		  lb.solve(temp);
-		  printf("subsection %s\n", lb.name);
+		  printf("subsection %s with %s\n", lb.name, lb.file);
 		  fprintf(tex, "\\subsection{%s}\n", lb.name);
 		  memcpy(temp, sec[i], sizeof temp);
 		  temp[strlen(temp)+1] = 0;

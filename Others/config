@@ -1,0 +1,3 @@
+<Exact Cover> <ExactCover.cpp>
+<Matrix Fast Power> <matrix_pow.cpp>
+<Polynomial> <polynomial.cpp>

@@ -1,8 +1,11 @@
 Code Template & LATEX
 =====================
-Generate Code Template in Latex fashion, the only thing you need to do is write code, and change the config file
+Generate ACM-ICPC Code Template with Latex fashion.<br/>
+Write code, then Change the config file.
 Usage
 -----
-./config: the directory you sort.<br/>
-./$directory/config: the code you wirte and the name you want to display in pdf file.<br/>
+		make
+**./config:** the directory you sort in pdf file.<br/>
+**./$directory/config:** the code you wirte and the name you want to display in pdf file.<br/>
+head: you can change the author here.<br/>
 That's all.<br />

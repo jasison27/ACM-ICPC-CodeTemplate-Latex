@@ -4,6 +4,7 @@ template.pdf: template.tex main
 	pdflatex template.tex
 
 template.tex: main
+	./main
 
 main: main.cpp
 	cc main.cpp -o main

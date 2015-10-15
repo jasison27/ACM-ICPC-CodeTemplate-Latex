@@ -3,7 +3,7 @@
 \usepackage[Glenn]{fncychap}
 \usepackage{listings}
 \usepackage{color}
-\usepackage{verbatim}	
+\usepackage{verbatim}
 
 \title{Code Template for ACM-ICPC}
 \author{jasison @ SYSU DemensionalSniper}

@@ -1,41 +1,15 @@
 <China Remainder Theory> <CRT.cpp>
-<China Remainder Theory> <decompose.cpp>
-<China Remainder Theory> <euler_phi.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <exgcd.cpp>
-<China Remainder Theory> <inverse.cpp>
-<China Remainder Theory> <line_mod.cpp>
-<China Remainder Theory> <log_mod.cpp>
-<China Remainder Theory> <Lucas.cpp>
-<China Remainder Theory> <Miller-Rabin.cpp>
-<China Remainder Theory> <mul_mod.cpp>
-<China Remainder Theory> <Pollard-Rho.cpp>
-<China Remainder Theory> <pow_mod.cpp>
-<China Remainder Theory> <power_mod.cpp>
-<China Remainder Theory> <primitive_root.cpp>
-<China Remainder Theory> <square_mod.cpp>
+<Decompose> <decompose.cpp>
+<Euler Phi> <euler_phi.cpp>
+<Extend GCD> <exgcd.cpp>
+<Integer Inverse> <inverse.cpp>
+<Line Mod> <line_mod.cpp>
+<Log Mod> <log_mod.cpp>
+<Lucas> <Lucas.cpp>
+<Miller Rabin> <Miller-Rabin.cpp>
+<Mul Mod> <mul_mod.cpp>
+<Pollard Rho> <Pollard-Rho.cpp>
+<Pow Mod> <pow_mod.cpp>
+<Power Mod> <power_mod.cpp>
+<Primitive Root> <primitive_root.cpp>
+<Square Mod> <square_mod.cpp>
